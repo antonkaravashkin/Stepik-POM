@@ -132,3 +132,6 @@ dmypy.json
 %allure_result_folder%/
 allure-report/
 reports/
+
+#vscode
+.vscode/
