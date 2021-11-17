@@ -9,3 +9,5 @@ def test_guest_can_add_product_to_basket(browser):
     page.solve_quiz_and_get_code()
     page.goods_is_added_to_bucket()
     page.goods_name_equal_name()
+    page.goods_price_mesage()
+    page.goods_equal_prices()

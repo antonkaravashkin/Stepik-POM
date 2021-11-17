@@ -22,4 +22,5 @@ class ProductPageLocators():
     ADD_TO_CART = (By.XPATH, "//form/button[@class='btn btn-lg btn-primary btn-add-to-basket']")
     GOODS_ADDED_MESSAGE = (By.XPATH, "//div[@id='messages']//div[1]//div[1]")
     GOODS_NAME = (By.CSS_SELECTOR, "div[class='col-sm-6 product_main'] h1" )
-    
+    PRICE_SUCCESS_MESSAGE = (By.XPATH, "//div[contains(@class, 'alertinner')]/p[1]")
+    PRICE = (By.XPATH, "//p[contains(@class,'price_color')]")

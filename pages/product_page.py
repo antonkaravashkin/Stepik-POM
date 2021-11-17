@@ -17,5 +17,15 @@ class ProductPage(BasePage):
             assert True, "Names does not compare!"
         else:
             assert False
-            
-    
+
+    def goods_price_mesage(self):
+        assert self.is_element_present(*ProductPageLocators.PRICE_SUCCESS_MESSAGE), "Price message missing"
+
+
+    def goods_equal_prices(self): 
+        price_matched = self.browser.find_element(*ProductPageLocators.PRICE_SUCCESS_MESSAGE).text
+        price = self.browser.find_element(*ProductPageLocators.PRICE).text
+        if price in price_matched:
+            assert True, "Prices does not compare!"
+        else:
+            assert False
