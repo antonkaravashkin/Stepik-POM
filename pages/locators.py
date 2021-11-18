@@ -13,10 +13,6 @@ class BasketPageLocators():
     POSITION_IN_BASKET = (By.XPATH, "//div[@class='row']/h2")
 
 
-#class MainPageLocators():
-#    pass
-    
-
 class LoginPageLocators():
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
     LOGIN_EMAIL_ADRESS = (By.CSS_SELECTOR, "#id_login-username")
