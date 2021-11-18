@@ -23,3 +23,10 @@ class ProductPage(BasePage):
         price_matched = self.browser.find_element(*ProductPageLocators.PRICE_SUCCESS_MESSAGE).text
         price = self.browser.find_element(*ProductPageLocators.PRICE).text
         assert price in price_matched, "Prices does not compare!"
+
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.GOODS_ADDED_MESSAGE), "element is on page"
+
+    def should_dissapear_of_success_message(self):
+        assert self.is_disappeared(*ProductPageLocators.GOODS_ADDED_MESSAGE), "is not dissapeared"

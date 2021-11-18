@@ -10,8 +10,7 @@ class LoginPage(BasePage):
 
     def should_be_login_url(self):
         substring = self.browser.current_url
-        if "login" in substring:
-            assert True, "Login string is not presented in link"
+        assert "login" in substring, "Login string is not presented in link"
 
     def should_be_login_form(self):
         # реализуйте проверку, что есть форма логина
