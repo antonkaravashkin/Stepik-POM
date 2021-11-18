@@ -6,6 +6,7 @@ class ProductPage(BasePage):
         cart = self.browser.find_element(*ProductPageLocators.ADD_TO_CART)
         cart.click()
 
+
     def goods_is_added_to_bucket(self):        
         assert self.is_element_present(*ProductPageLocators.GOODS_ADDED_MESSAGE), "Message missing"
 
@@ -14,6 +15,7 @@ class ProductPage(BasePage):
         goods_matched = self.browser.find_element(*ProductPageLocators.GOODS_ADDED_MESSAGE).text
         goods_name = self.browser.find_element(*ProductPageLocators.GOODS_NAME).text
         assert goods_name == goods_matched, 'No such names'
+
 
     def goods_price_mesage(self):
         assert self.is_element_present(*ProductPageLocators.PRICE_SUCCESS_MESSAGE), "Price message missing"
@@ -27,6 +29,7 @@ class ProductPage(BasePage):
 
     def should_not_be_success_message(self):
         assert self.is_not_element_present(*ProductPageLocators.GOODS_ADDED_MESSAGE), "element is on page"
+
 
     def should_dissapear_of_success_message(self):
         assert self.is_disappeared(*ProductPageLocators.GOODS_ADDED_MESSAGE), "is not dissapeared"

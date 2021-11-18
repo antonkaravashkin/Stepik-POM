@@ -4,6 +4,14 @@ from selenium.webdriver.common.by import By
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    BASKET_LINK = (By.XPATH, "//div//a[@class='btn btn-default']")
+
+
+class BasketPageLocators():
+    BASKET_NAME = (By.XPATH, "//div[@class='page-header action']/h1")
+    EMPTY_BASKET_TEXT = (By.XPATH, "//div[@id='content_inner']/p")  
+    POSITION_IN_BASKET = (By.XPATH, "//div[@class='row']/h2")
+
 
 #class MainPageLocators():
 #    pass
@@ -21,6 +29,7 @@ class LoginPageLocators():
     REGISTRATION_PASSWORD_FIELD = (By.CSS_SELECTOR, "#id_registration-password1")
     REGISTRATION_CONFIRM_PASSWORD = (By.CSS_SELECTOR, "#id_registration-password2")
     REGISTRATION_CONFIRM_BUTTON = (By.NAME, "registration_submit")
+
 
 class ProductPageLocators():
     ADD_TO_CART = (By.XPATH, "//form/button[@class='btn btn-lg btn-primary btn-add-to-basket']")
