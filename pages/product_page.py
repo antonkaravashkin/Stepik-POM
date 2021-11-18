@@ -13,10 +13,7 @@ class ProductPage(BasePage):
     def goods_name_equal_name(self): 
         goods_matched = self.browser.find_element(*ProductPageLocators.GOODS_ADDED_MESSAGE).text
         goods_name = self.browser.find_element(*ProductPageLocators.GOODS_NAME).text
-        if goods_name in goods_matched:
-            assert True, "Names does not compare!"
-        else:
-            assert False
+        assert goods_name == goods_matched, 'No such names'
 
     def goods_price_mesage(self):
         assert self.is_element_present(*ProductPageLocators.PRICE_SUCCESS_MESSAGE), "Price message missing"
@@ -25,7 +22,4 @@ class ProductPage(BasePage):
     def goods_equal_prices(self): 
         price_matched = self.browser.find_element(*ProductPageLocators.PRICE_SUCCESS_MESSAGE).text
         price = self.browser.find_element(*ProductPageLocators.PRICE).text
-        if price in price_matched:
-            assert True, "Prices does not compare!"
-        else:
-            assert False
+        assert price in price_matched, "Prices does not compare!"
